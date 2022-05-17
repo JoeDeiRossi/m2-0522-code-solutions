@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+}
+
+.row {
+  display: flex;
+}
+
+.carousel-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+i {
+  font-size: 50px;
+}
+
+.dot-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+i.fa-circle {
+  font-size: 20px;
+  margin: 5px;
+}
