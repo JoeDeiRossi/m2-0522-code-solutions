@@ -11,8 +11,9 @@ const images = [
   { src: 'images/039.png', alt: 'Jigglypuff' }
 ];
 
-dotContainer.addEventListener('click', event => {
+function handleDotClick(event) {
   if (event.target.className === 'fa-regular fa-circle') {
+    clearInterval(interval);
     for (let i = 0; i < dots.length; i++) {
       const currentDot = dots[i];
       currentDot.className = 'fa-regular fa-circle';
@@ -22,12 +23,16 @@ dotContainer.addEventListener('click', event => {
         img.setAttribute('alt', images[i].alt);
       }
     }
+    interval = setInterval(handleNextClick, 3000);
   }
-});
+}
+
+dotContainer.addEventListener('click', handleDotClick);
 
 const nextArrow = document.querySelector('.fa-chevron-right');
 
-nextArrow.addEventListener('click', event => {
+function handleNextClick(event) {
+  clearInterval(interval);
   for (let i = 0; i < dots.length; i++) {
     if (dots[i].className === 'fa-solid fa-circle') {
       dots[i].className = 'fa-regular fa-circle';
@@ -35,19 +40,24 @@ nextArrow.addEventListener('click', event => {
         dots[i + 1].className = 'fa-solid fa-circle';
         img.setAttribute('src', images[i + 1].src);
         img.setAttribute('alt', images[i + 1].alt);
+        interval = setInterval(handleNextClick, 3000);
         return;
       } else {
         dots[0].className = 'fa-solid fa-circle';
         img.setAttribute('src', images[0].src);
         img.setAttribute('alt', images[0].alt);
+        interval = setInterval(handleNextClick, 3000);
       }
     }
   }
-});
+}
+
+nextArrow.addEventListener('click', handleNextClick);
 
 const previousArrow = document.querySelector('.fa-chevron-left');
 
-previousArrow.addEventListener('click', event => {
+function handlePreviousClick(event) {
+  clearInterval(interval);
   for (let i = 0; i < dots.length; i++) {
     if (dots[i].className === 'fa-solid fa-circle') {
       dots[i].className = 'fa-regular fa-circle';
@@ -55,13 +65,19 @@ previousArrow.addEventListener('click', event => {
         dots[i - 1].className = 'fa-solid fa-circle';
         img.setAttribute('src', images[i - 1].src);
         img.setAttribute('alt', images[i - 1].alt);
+        interval = setInterval(handleNextClick, 3000);
         return;
       } else {
         dots[dots.length - 1].className = 'fa-solid fa-circle';
         img.setAttribute('src', images[dots.length - 1].src);
         img.setAttribute('alt', images[dots.length - 1].alt);
+        interval = setInterval(handleNextClick, 3000);
         return;
       }
     }
   }
-});
+}
+
+previousArrow.addEventListener('click', handlePreviousClick);
+
+let interval = setInterval(handleNextClick, 3000);
