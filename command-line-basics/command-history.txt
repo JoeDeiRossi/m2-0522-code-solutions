@@ -1,0 +1,297 @@
+    1  git status
+    2  git pull origin main
+    3  clear
+    4  git branch http-messages
+    5  git switch http-messages 
+    6  git status
+    7  clear
+    8  https httpie.io/hello
+    9  http GET https://example.com
+   10  http https://example.com
+   11  http --verbose https://example.com
+   12  http --body GET https://jsonplaceholder.typicode.com/users > http-messages/users.json
+   13  http --body GET https://example.com > http-messages/index.html
+   14  clear
+   15  git status
+   16  git add http-messages/
+   17  git status
+   18  git commit -m "Completed http-messages exercise""
+   19  git status
+   20  git commit -m "Completed http-messages exercise"
+   21  git status
+   22  git push origin http-messages 
+   23  git status
+   24  clear
+   25  git status
+   26  git switch main
+   27  git status
+   28  git branch
+   29  git switch http-messages 
+   30  git status
+   31  clear
+   32  http https://example.com
+   33  http --verbose https://example.com
+   34  http --body GET https://jsonplaceholder.typicode.com/users > http-messages/users.json
+   35  git status
+   36  http --body GET https://jsonplaceholder.typicode.com/users > http-messages/users.json
+   37  git status
+   38  http --body GET https://example.com > http-messages/index.html
+   39  http --body GET https://example.com > http-messages/index.html
+   40  git status
+   41  clear
+   42  http --body GET https://jsonplaceholder.typicode.com/users > http-messages/users.json
+   43  http --body GET https://example.com > http-messages/index.html
+   44  git status
+   45  git switch main
+   46  git status
+   47  git pull origin main
+   48  clear
+   49  git status
+   50  clear
+   51  git status
+   52  git branch javascript-ajax
+   53  git switch javascript-ajax 
+   54  git status
+   55  clear
+   56  git status
+   57  git status
+   58  clear
+   59  git status
+   60  git status
+   61  git add javascript-ajax/
+   62  git status
+   63  git commit -m "Completed javascript-ajax exercise"
+   64  git status
+   65  git push origin javascript-ajax 
+   66  git status
+   67  git status
+   68  git switch main
+   69  clear
+   70  git status
+   71  git status
+   72  git pull origin main
+   73  git status
+   74  clear
+   75  git status
+   76  git pull origin main
+   77  clear
+   78  http https://example.com
+   79  http --verbose https://example.com
+   80  http https://cat-fact.herokuapp.com/facts
+   81  http https://virtserver.swaggerhub.com/whiterabbit8/meowfacts/1.0.0
+   82  http https://virtserver.swaggerhub.com/whiterabbit8/meowfacts/1.0.0/?count=1
+   83  http https://virtserver.swaggerhub.com/whiterabbit8/meowfacts/1.0.0/?count=1
+   84  http https://virtserver.swaggerhub.com/whiterabbit8/meowfacts/1.0.0/?count=1
+   85  http https://virtserver.swaggerhub.com/whiterabbit8/meowfacts/1.0.0/?count=2
+   86  http https://api.domainsdb.info/v1/domains/search?domain=google
+   87  clear
+   88  https://holidays.abstractapi.com/v1/?api_key=ad02e6d19d754ecea90b7f7a5378cae7&country=US&year=2020&month=12&day=25
+   89  http https://holidays.abstractapi.com/v1/?api_key=ad02e6d19d754ecea90b7f7a5378cae7&country=US&year=2020&month=12&day=25
+   90  clear
+   91  git status
+   92  clear
+   93  http https://holidays.abstractapi.com/v1/?api_key=ad02e6d19d754ecea90b7f7a5378cae7&country=SG
+   94  clear
+   95  git status
+   96  clear
+   97  http https://holidays.abstractapi.com/v1/?api_key=ad02e6d19d754ecea90b7f7a5378cae7&country=US&year=2020&month=12&day=25
+   98  clear
+   99  http https://holidays.abstractapi.com/v1/?api_key=ad02e6d19d754ecea90b7f7a5378cae7&country=US&year=2020&month=12&day=25
+  100  clear
+  101  clear
+  102  git status
+  103  http https://calendarific.com/api/v2/holidays?&api_key=4eb0c507dd4cab5e761fffeb7d1d9f5521610018&country=US&year=2019&month=5&day=29
+  104  clear
+  105  clear
+  106  http https://calendarific.com/api/v2/languages
+  107  http https://calendarific.com/api/v2/languages?api_key=4eb0c507dd4cab5e761fffeb7d1d9f5521610018
+  108  http https://calendarific.com/api/v2/holidays?api_key=4eb0c507dd4cab5e761fffeb7d1d9f5521610018&country=US&y
+  109  clear
+  110  clear
+  111  http https://calendarific.com/api/v2/languages?api_key=4eb0c507dd4cab5e761fffeb7d1d9f5521610018
+  112  http https://calendarific.com/api/v2/holidays?api_key=4eb0c507dd4cab5e761fffeb7d1d9f5521610018
+  113  clear
+  114  http https://calendarific.com/api/v2/holidays?api_key=4eb0c507dd4cab5e761fffeb7d1d9f5521610018&country=US&year=2019
+  115  clear
+  116  clear
+  117  git status
+  118  clear
+  119  http https://calendarific.com/api/v2/holidays?&api_key=4eb0c507dd4cab5e761fffeb7d1d9f5521610018&country=US&year=2019
+  120  git status
+  121  git branch
+  122  git branch es6-const-let
+  123  git switch es6-const-let 
+  124  git status
+  125  git status
+  126  git switch main
+  127  git pull origin main
+  128  git switch es6-const-let 
+  129  git status
+  130  git add es6-const-let/
+  131  git status
+  132  git commit -m "Completed es6-const-let exercise""
+  133  git status
+  134  git commit -m "Completed es6-const-let exercise"
+  135  git status
+  136  git push origin es6-const-let 
+  137  git status
+  138  git switch main
+  139  clear
+  140  git status
+  141  git branch es6-template-literals
+  142  git switch es6-template-literals 
+  143  git status
+  144  clear
+  145  git status
+  146  git add es6-template-literals/
+  147  git status
+  148  git commit -m "Completed es6-template-literals exercise"
+  149  git status
+  150  git push origin es6-template-literals 
+  151  clear
+  152  git status
+  153  git switch main
+  154  git status
+  155  clear
+  156  git pull origin main
+  157  git switch es6-template-literals 
+  158  git status
+  159  clear
+  160  git status
+  161  git add es6-template-literals/index.html 
+  162  git status
+  163  git commit -m "Reverted non-concatenations to their original format. Converted the previously missed applepen concatenation"
+  164  git status
+  165  git push origin es6-template-literals 
+  166  git status
+  167  clear
+  168  git switch main
+  169  git status
+  170  clear
+  171  git pull origin main
+  172  git status
+  173  clear
+  174  git status
+  175  git branch es6-destructuring
+  176  git switch es6-destructuring 
+  177  git status
+  178  clear
+  179  git status
+  180  git add es6-destructuring/
+  181  git status
+  182  git commit -m "Completed es6-destructuring exercise"
+  183  git status
+  184  git push origin es6-destructuring 
+  185  git status
+  186  clear
+  187  git switch main
+  188  git status
+  189  clear
+  190  git status
+  191  git branch es6-arrow-functions
+  192  git switch es6-arrow-functions 
+  193  git status
+  194  clear
+  195  git status
+  196  git add es6-arrow-functions/
+  197  git status
+  198  git commit -m "Completed es6-arrow-functions exercise"
+  199  git status
+  200  git push origin es6-arrow-functions 
+  201  git status
+  202  clear
+  203  git switch main
+  204  clear
+  205  git status
+  206  git pull origin main
+  207  clear
+  208  git pull origin main
+  209  clear
+  210  git status
+  211  clear
+  212  git status
+  213  git pull origin main
+  214  clear
+  215  git branch command-line-basics
+  216  git switch command-line-basics 
+  217  git status
+  218  clear
+  219  ls
+  220  pwd
+  221  clear
+  222   cd command-line-basics/
+  223  git status
+  224  man
+  225  man man
+  226  man cat
+  227  cat laziness.txt 
+  228  cat impatience.txt 
+  229  cat hubris.txt 
+  230  man cat
+  231  cat laziness.txt impatience.txt hubris.txt 
+  232  cat laziness.txt impatience.txt hubris.txt > three-virtues.txt
+  233  cat three-virtues.txt 
+  234  clear
+  235  man ls
+  236  ls
+  237  ls -a
+  238  ls -F
+  239  man ls
+  240  clear
+  241  ls
+  242  ls -a
+  243  ls -F
+  244  ls lfz-staff/
+  245  ls lfz-staff/ -a
+  246  ls lfz-staff/ -F
+  247  ls -aF lfz-staff > lfz-staff/contents.txt
+  248  cat lfz-staff/contents.txt 
+  249  clear
+  250  clear
+  251  clear
+  252  clear
+  253  man pwd
+  254  pwd
+  255  pwd > i-was-here.txt
+  256  ls
+  257  cat i-was-here.txt 
+  258  cat lol.txt 
+  259  clear
+  260  man echo
+  261  echo 'Hello, World!'
+  262  echo 'Hello, World!' > hello.txt
+  263  ls
+  264  cat hello.txt 
+  265  man touch
+  266  clear
+  267  man touch
+  268  touch tag-youre-it.txt
+  269  touch snoot/boop.txt
+  270  ls snoot/
+  271  clear
+  272  man mkdir
+  273  mkdir parent
+  274  ls
+  275  mkdir -p parent/child/grandchild
+  276  ls parent/
+  277  ls parent/child/
+  278  touch parent/child/grandchild/.gitkeep
+  279  ls -a
+  280  clear
+  281  man mv
+  282  mv pokiemans/ pokemon
+  283  ls
+  284  man rm
+  285  rm lol.txt 
+  286  ls
+  287  rm -r kill-me/
+  288  ls
+  289  man rm
+  290  man cp
+  291  cp and-then.txt no-and-then.txt
+  292  ls
+  293  cat and-then.txt no-and-then.txt 
+  294  clear
+  295  man history
+  296  history
+  297  history > command-history.txt
