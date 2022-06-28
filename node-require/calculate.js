@@ -4,8 +4,8 @@ const multiply = require('./multiply');
 const divide = require('./divide');
 
 let result;
-const num1 = parseInt(process.argv[2]);
-const num2 = parseInt(process.argv[4]);
+const num1 = parseFloat(process.argv[2]);
+const num2 = parseFloat(process.argv[4]);
 
 switch (process.argv[3]) {
   case 'plus':
