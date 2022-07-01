@@ -33,7 +33,9 @@ switch (process.argv[2]) {
     const idToUpdate = process.argv[3];
     const updatedNote = process.argv[4];
 
-    data.notes[idToUpdate] = updatedNote;
+    if (data.notes[idToUpdate]) {
+      data.notes[idToUpdate] = updatedNote;
+    }
 
     fs.writeFile('./data.json', JSON.stringify(data, null, 2), err => {
       if (err) throw err;
