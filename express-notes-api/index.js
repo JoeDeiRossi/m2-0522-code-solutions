@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const data = require('./data.json');
+const fs = require('fs');
 
 const jsonMiddleware = express.json();
 app.use(jsonMiddleware);
@@ -30,6 +31,31 @@ app.get('/api/notes/:id', (req, res) => {
   } else {
     res.status(404);
     res.json({ error: `cannot find note with id ${id}` });
+  }
+});
+
+// Clients can POST a new note
+
+app.post('/api/notes', (req, res) => {
+  if (!req.body.content) {
+    res.status(400);
+    res.json({ error: 'must include a content property in the request body' });
+  } else {
+    data.notes[data.nextId] = {};
+    data.notes[data.nextId].id = data.nextId;
+    data.notes[data.nextId].content = req.body.content;
+    data.nextId++;
+
+    fs.writeFile('./data.json', JSON.stringify(data, null, 2), err => {
+      if (err) {
+        console.error(err);
+        res.status(500);
+        res.json({ error: 'An unexpected error occurred' });
+      } else {
+        res.status(201);
+        res.json(data.notes[data.nextId - 1]);
+      }
+    });
   }
 });
 
