@@ -40,23 +40,55 @@ app.post('/api/notes', (req, res) => {
   if (!req.body.content) {
     res.status(400);
     res.json({ error: 'must include a content property in the request body' });
-  } else {
-    data.notes[data.nextId] = {};
-    data.notes[data.nextId].id = data.nextId;
-    data.notes[data.nextId].content = req.body.content;
-    data.nextId++;
-
-    fs.writeFile('./data.json', JSON.stringify(data, null, 2), err => {
-      if (err) {
-        console.error(err);
-        res.status(500);
-        res.json({ error: 'An unexpected error occurred' });
-      } else {
-        res.status(201);
-        res.json(data.notes[data.nextId - 1]);
-      }
-    });
+    return;
   }
+
+  data.notes[data.nextId] = {};
+  data.notes[data.nextId].id = data.nextId;
+  data.notes[data.nextId].content = req.body.content;
+  data.nextId++;
+
+  fs.writeFile('./data.json', JSON.stringify(data, null, 2), err => {
+    if (err) {
+      console.error(err);
+      res.status(500);
+      res.json({ error: 'An unexpected error occurred' });
+    } else {
+      res.status(201);
+      res.json(data.notes[data.nextId - 1]);
+    }
+  });
+});
+
+// Clients can DELETE a note by id
+
+app.delete('/api/notes/:id', (req, res) => {
+  const id = req.params.id;
+
+  if (parseInt(id) <= 0 || isNaN(id)) {
+    res.status(400);
+    res.json({ error: 'id must be a positive integer' });
+    return;
+  }
+
+  if (data.notes[id] === undefined) {
+    res.status(404);
+    res.json({ error: `cannot find note with id ${id}` });
+    return;
+  }
+
+  delete data.notes[id];
+
+  fs.writeFile('./data.json', JSON.stringify(data, null, 2), err => {
+    if (err) {
+      console.error(err);
+      res.status(500);
+      res.json({ error: 'An unexpected error occurred' });
+    } else {
+      res.status(204);
+      res.send();
+    }
+  });
 });
 
 app.listen(3000, () => {
